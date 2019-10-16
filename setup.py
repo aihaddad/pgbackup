@@ -11,6 +11,14 @@ setup(
     description='A utility for backing up PostgreSQL databases.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='github.com/example',
-    packages=find_packages('src')
+    url='https://github.com/aihaddad/pgbackup',
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    install_requires=['boto3'],
+    python_requires='>=3.6',
+    entry_points={
+        'console_scripts': [
+            'pgbackup=pgbackup.cli:main',
+        ],
+     }
 )
